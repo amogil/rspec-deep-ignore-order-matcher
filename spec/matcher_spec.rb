@@ -33,4 +33,7 @@ describe Deep::Ignore::Order::Matcher do
 		{ :a => 1 }.should_not be_deep_equal({ :a => 1, :b => 2 })
 	end
 
+	it 'should ignore hash keys order' do
+		{ :a => 1, :b => 2 }.should be_deep_equal({ :b => 2, :a => 1 })
+	end
 end

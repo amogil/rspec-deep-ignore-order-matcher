@@ -33,7 +33,7 @@ RSpec::Matchers.define :be_deep_equal do |expected|
 	end
 
 	def hashes_matches?(actual, expected)
-		return false unless actual.keys == expected.keys
+		return false unless actual.keys.sort == expected.keys.sort
 		actual.each { |key, value| return false unless m? value, expected[key] }
 		true
 	end
