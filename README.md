@@ -15,7 +15,7 @@ gem 'rspec-deep-ignore-order-matcher'
 ## Example
 ```
 describe 'Products' do
-	it "should ignore order of product\'s tags" do
+	it "should ignore order of product's tags" do
 		expected = [{ :product => { :title => 'Product 1', :tags => ['large', 'blue', 'heavy'] } }]
 		actual = [{ :product => { :title => 'Product 1', :tags => ['blue', 'large', 'heavy'] } }]
 		actual.should be_deep_equal expected
