@@ -1,6 +1,6 @@
 # RSpec Deep Matcher
 
-This gem adds a custom matcher to RSpec to recursively compare nested Ruby data-structures consisting of `Hash` and `Array` elements.
+This gem adds a custom matcher to RSpec to recursively compare nested Ruby data-structures consisting of Hash and Array elements.
 An order of elements in an array is ignored.
 
 ## Install
@@ -10,6 +10,10 @@ sudo gem install rspec-deep-ignore-order-matcher
 or add to your `Gemfile`
 ```
 gem 'rspec-deep-ignore-order-matcher'
+```
+and run
+```
+bundle install
 ```
 
 ## Example
