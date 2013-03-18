@@ -1,29 +1,24 @@
-# Rspec::Deep::Ignore::Order::Matcher
+# RSpec Deep Matcher
 
-TODO: Write a gem description
+This gem adds a custom matcher to RSpec to recursively compare nested Ruby data-structures consisting of `Hash` and `Array` elements.
+An order of elements in an array is ignored.
 
-## Installation
+## Install
+```
+sudo gem install rspec-deep-ignore-order-matcher
+```
+or add to your `Gemfile`
+```
+gem 'rspec-deep-ignore-order-matcher'
+```
 
-Add this line to your application's Gemfile:
-
-    gem 'rspec-deep-ignore-order-matcher'
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install rspec-deep-ignore-order-matcher
-
-## Usage
-
-TODO: Write usage instructions here
-
-## Contributing
-
-1. Fork it
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create new Pull Request
+## Example
+```
+describe 'Products' do
+	it "should ignore order of product\'s tags" do
+		expected = [{ :product => { :title => 'Product 1', :tags => ['large', 'blue', 'heavy'] } }]
+		actual = [{ :product => { :title => 'Product 1', :tags => ['blue', 'large', 'heavy'] } }]
+		actual.should be_deep_equal expected
+	end
+end
+```
