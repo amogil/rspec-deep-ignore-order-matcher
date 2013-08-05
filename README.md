@@ -5,7 +5,7 @@ An order of elements in an array is ignored.
 
 ## Install
 ```
-sudo gem install rspec-deep-ignore-order-matcher
+gem install rspec-deep-ignore-order-matcher
 ```
 or add to your `Gemfile`
 ```
