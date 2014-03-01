@@ -1,19 +1,19 @@
-require 'rspec'
+require 'spec' # RSpec-1
 require 'rspec-deep-ignore-order-matcher/version'
 
-RSpec::Matchers.define :be_deep_equal do |expected|
+Spec::Matchers.define :be_deep_equal do |expected|
 	match { |actual| m? actual, expected }
 
 	failure_message_for_should do |actual|
-		"expected that #{actual} would be deep equal with #{expected}"
+		"expected that #{actual.pretty_print_inspect} would be deep equal with #{expected.pretty_print_inspect}"
 	end
 
 	failure_message_for_should_not do |actual|
-		"expected that #{actual} would not be deep equal with #{expected}"
+		"expected that #{actual.pretty_print_inspect} would not be deep equal with #{expected.pretty_print_inspect}"
 	end
 
 	description do
-		"be deep equal with #{expected}"
+		"be deep equal with #{expected.pretty_print_inspect}"
 	end
 
 	def m?(actual, expected)
@@ -33,8 +33,11 @@ RSpec::Matchers.define :be_deep_equal do |expected|
 	end
 
 	def hashes_matches?(actual, expected)
-		return false unless actual.keys.sort == expected.keys.sort
-		actual.each { |key, value| return false unless m? value, expected[key] }
+    # convert symbols to strings for sorting
+		return false unless actual.keys.sort{ |a, b| a.to_s <=> b.to_s } == expected.keys.sort{ |a, b| a.to_s <=> b.to_s }
+    actual.each { |key, value| return false unless m? value, expected[key] }
 		true
-	end
+  end
+
+  diffable # usage: spec --diff
 end
