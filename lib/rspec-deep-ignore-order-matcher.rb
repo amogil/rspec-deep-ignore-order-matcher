@@ -17,12 +17,12 @@ RSpec::Matchers.define :be_deep_equal do |expected|
 	end
 
 	def m?(actual, expected)
-		return arrays_matches?(actual, expected) if expected.is_a?(Array) && actual.is_a?(Array)
-		return hashes_matches?(actual, expected) if expected.is_a?(Hash) && actual.is_a?(Hash)
+		return arrays_match?(actual, expected) if expected.is_a?(Array) && actual.is_a?(Array)
+		return hashes_match?(actual, expected) if expected.is_a?(Hash) && actual.is_a?(Hash)
 		expected == actual
 	end
 
-	def arrays_matches?(actual, expected)
+	def arrays_match?(actual, expected)
 		exp = expected.clone
 		actual.each do |a|
 			index = exp.find_index { |e| m? a, e }
@@ -32,7 +32,7 @@ RSpec::Matchers.define :be_deep_equal do |expected|
 		exp.length == 0
 	end
 
-	def hashes_matches?(actual, expected)
+	def hashes_match?(actual, expected)
 		return false unless actual.keys.sort == expected.keys.sort
 		actual.each { |key, value| return false unless m? value, expected[key] }
 		true
