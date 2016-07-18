@@ -2,6 +2,7 @@
 
 [![Gem Version](https://badge.fury.io/rb/rspec-deep-ignore-order-matcher.png)](http://badge.fury.io/rb/rspec-deep-ignore-order-matcher)
 [![Code Climate](https://codeclimate.com/github/amogil/rspec-deep-ignore-order-matcher/badges/gpa.svg)](https://codeclimate.com/github/amogil/rspec-deep-ignore-order-matcher)
+[![Build Status](https://travis-ci.org/amogil/rspec-deep-ignore-order-matcher.svg?branch=master)](https://travis-ci.org/amogil/rspec-deep-ignore-order-matcher)
 
 This gem adds a custom matcher to RSpec to recursively compare nested Ruby data-structures consisting of Hash and Array elements.
 An order of elements in an array is ignored.
