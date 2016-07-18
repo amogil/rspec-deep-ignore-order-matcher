@@ -11,6 +11,7 @@ Gem::Specification.new do |gem|
   gem.description = 'This gem adds a custom matcher to RSpec to recursively compare nested Ruby data-structures consisting of `Hash` and `Array` elements. An order of elements in an array is ignored.'
   gem.summary = 'A custom matcher to RSpec to recursively compare nested Ruby data-structures consisting of `Hash` and `Array` elements.'
   gem.homepage = 'https://github.com/amogil/rspec-deep-ignore-order-matcher'
+  gem.license = 'MIT'
 
   gem.files = `git ls-files`.split($INPUT_RECORD_SEPARATOR)
   gem.executables = gem.files.grep(%r{^bin/}).map { |f| File.basename(f) }
@@ -18,8 +19,8 @@ Gem::Specification.new do |gem|
   gem.require_paths = ['lib']
   gem.required_ruby_version = '>= 2.0'
 
-  gem.add_dependency 'rspec', '>= 3.0'
+  gem.add_dependency 'rspec', '~> 3.0'
   gem.add_development_dependency 'bundler', '~> 1.6'
-  gem.add_development_dependency 'rake'
-  gem.add_development_dependency 'rubocop'
+  gem.add_development_dependency 'rake', '~> 0'
+  gem.add_development_dependency 'rubocop', '~> 0'
 end
