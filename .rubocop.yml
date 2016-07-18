@@ -1,4 +1,6 @@
 AllCops:
   TargetRubyVersion: 2.0
+  Exclude:
+    - rspec-deep-ignore-order-matcher.gemspec
 Metrics/LineLength:
   Max: 120

@@ -8,10 +8,8 @@ Gem::Specification.new do |gem|
   gem.version = Deep::Ignore::Order::Matcher::VERSION
   gem.authors = ['Alexey Mogilnikov']
   gem.email = ['alexey@mogilnikov.name']
-  gem.description = 'This gem adds a custom matcher to RSpec to recursively compare nested Ruby data-structures
-										 consisting of `Hash` and `Array` elements. An order of elements in an array is ignored.'.squish
-  gem.summary = 'A custom matcher to RSpec to recursively compare nested Ruby data-structures consisting of `Hash`
-								 and `Array` elements.'.squish
+  gem.description = 'This gem adds a custom matcher to RSpec to recursively compare nested Ruby data-structures consisting of `Hash` and `Array` elements. An order of elements in an array is ignored.'
+  gem.summary = 'A custom matcher to RSpec to recursively compare nested Ruby data-structures consisting of `Hash` and `Array` elements.'
   gem.homepage = 'https://github.com/amogil/rspec-deep-ignore-order-matcher'
 
   gem.files = `git ls-files`.split($INPUT_RECORD_SEPARATOR)
