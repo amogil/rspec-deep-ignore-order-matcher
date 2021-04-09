@@ -18,8 +18,9 @@ Gem::Specification.new do |gem|
   gem.test_files = gem.files.grep(%r{^(test|spec|features)/})
   gem.require_paths = ['lib']
   gem.required_ruby_version = '>= 2.7'
-  spec.add_development_dependency 'bundler', '~> 2.2'
-  spec.add_development_dependency 'rake', '~> 13.0'
-  spec.add_development_dependency 'rubocop', '~> 1.12'
-  spec.add_development_dependency 'rspec', '~> 3.10'
+  
+  gem.add_dependency 'rspec', '~> 3.10'  
+  gem.add_development_dependency 'bundler', '~> 2.2'
+  gem.add_development_dependency 'rake', '~> 13.0'
+  gem.add_development_dependency 'rubocop', '~> 1.12'
 end
